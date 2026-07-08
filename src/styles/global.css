@@ -16,8 +16,22 @@
   --font-body: "Mulish", sans-serif;     /* cuerpo */
 }
 
+:root { color-scheme: dark; }
 html { scroll-behavior: smooth; }
 body { font-family: var(--font-body); }
+
+/* el header fijo no debe tapar las secciones al saltar por ancla */
+section[id], header[id] { scroll-margin-top: 6rem; }
+
+/* header sólido al hacer scroll (clase togglea por JS) */
+#site-header.scrolled nav {
+  background: rgba(13, 11, 10, .92);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 28px -14px rgba(0, 0, 0, .9);
+}
+
+/* foco visible de marca */
+:focus-visible { outline: 2px solid var(--color-ambar); outline-offset: 3px; border-radius: 2px; }
 
 /* animación de entrada del hero (al cargar) */
 @keyframes rise { to { opacity: 1; transform: none; } }

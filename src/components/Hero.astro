@@ -32,7 +32,7 @@ const wa = 'https://wa.me/573104445220';
       </div>
 
       <p class="rise mt-6 text-[0.85rem] tracking-[.02em] text-tenue" style="animation-delay:.82s">
-        <span class="text-amarillo">★</span> <b class="text-crema">4.4</b> en Google · Cervecería desde el barrio
+        <span class="text-amarillo" aria-hidden="true">★</span> <b class="text-crema">4.4</b> en Google · Cervecería desde el barrio
       </p>
     </div>
   </div>
@@ -48,7 +48,7 @@ const wa = 'https://wa.me/573104445220';
       { ic: '🍗', t: 'Alitas & burgers', s: 'Cocina de barra' },
     ].map((p, i) => (
       <div class:list={['flex items-center gap-3.5 px-1 py-2.5', i % 2 === 1 && 'border-l border-white/10 pl-5', i === 2 && 'md:border-l border-white/10 md:pl-5']}>
-        <span class="text-[1.7rem] leading-none">{p.ic}</span>
+        <span class="text-[1.7rem] leading-none" aria-hidden="true">{p.ic}</span>
         <div>
           <b class="block font-display text-[1.02rem] font-normal uppercase tracking-[.03em]">{p.t}</b>
           <small class="text-[0.78rem] text-tenue">{p.s}</small>

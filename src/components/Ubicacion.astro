@@ -59,6 +59,9 @@ const mapLink = `https://www.google.com/maps/search/?api=1&query=${mapQuery}`;
 <script>
   // anti-hijack: el mapa no captura el scroll hasta que el usuario hace clic
   document.querySelectorAll<HTMLButtonElement>('.map-overlay').forEach((ov) =>
-    ov.addEventListener('click', () => (ov.style.display = 'none')),
+    ov.addEventListener('click', () => {
+      ov.style.display = 'none';
+      ov.parentElement?.querySelector('iframe')?.focus();
+    }),
   );
 </script>

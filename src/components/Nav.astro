@@ -9,75 +9,85 @@ const links = [
 const wa = 'https://wa.me/573104445220';
 ---
 
-<!-- barra utilitaria -->
-<div class="border-b border-white/10 bg-negro2 text-[0.78rem] text-tenue">
-  <div class="mx-auto flex max-w-[1240px] flex-wrap justify-center gap-x-6 gap-y-1 px-6 py-2 text-center sm:justify-between">
-    <span>📍 Transversal 40 · Diag. 74A #28 — Laureles, Medellín</span>
-    <span>Reservas: <b class="font-bold text-ambar">310 444 5220</b> · Mar–Dom</span>
-  </div>
-</div>
-
-<nav class="absolute inset-x-0 top-[38px] z-30">
-  <div class="mx-auto flex max-w-[1240px] items-center justify-between px-6 py-5">
-    <!-- logo -->
-    <a href="#inicio" class="leading-none text-crema">
-      <span
-        class="inline-block origin-left scale-x-[.85] whitespace-nowrap font-slab text-[1.75rem] font-black uppercase leading-none tracking-[.005em]"
-        >Public <span class="text-ambar">House</span></span
-      >
-      <small class="mt-1.5 block font-body text-[0.5rem] font-semibold uppercase tracking-[.34em] text-tenue"
-        >Cervecería · Laureles</small
-      >
-    </a>
-
-    <!-- links escritorio -->
-    <ul class="hidden items-center gap-8 text-[0.82rem] font-bold uppercase tracking-[.08em] min-[900px]:flex">
-      {links.map((l) => (
-        <li>
-          <a href={l.href} class="text-crema/85 transition hover:text-ambar hover:opacity-100">{l.label}</a>
-        </li>
-      ))}
-    </ul>
-
-    <a
-      href={wa}
-      class="hidden items-center gap-2 rounded-lg bg-ambar px-5 py-2.5 text-[0.8rem] font-extrabold tracking-[.02em] text-[#20160a] transition hover:-translate-y-0.5 hover:bg-ambar2 hover:shadow-[0_10px_24px_-8px_rgba(224,163,64,.6)] min-[900px]:inline-flex"
-      >🍺 Reserva por WhatsApp</a
-    >
-
-    <!-- hamburguesa móvil -->
-    <button
-      id="burger"
-      aria-label="Abrir menú"
-      aria-expanded="false"
-      aria-controls="menu-movil"
-      class="p-1.5 min-[900px]:hidden"
-    >
-      <span class="mb-[7px] block h-[2.5px] w-[26px] rounded bg-crema"></span>
-      <span class="mb-[7px] block h-[2.5px] w-[26px] rounded bg-crema"></span>
-      <span class="block h-[2.5px] w-[26px] rounded bg-crema"></span>
-    </button>
+<!-- header fijo: transparente sobre el hero, sólido al hacer scroll -->
+<header id="site-header" class="fixed inset-x-0 top-0 z-40 transition-colors duration-300">
+  <!-- barra utilitaria -->
+  <div class="border-b border-white/10 bg-negro2 text-[0.78rem] text-tenue">
+    <div class="mx-auto flex max-w-[1240px] flex-wrap justify-center gap-x-6 gap-y-1 px-6 py-2 text-center sm:justify-between">
+      <span>📍 Transversal 40 · Diag. 74A #28 — Laureles, Medellín</span>
+      <span>Reservas: <b class="font-bold text-ambar">310 444 5220</b> · Mar–Dom</span>
+    </div>
   </div>
 
-  <!-- menú móvil -->
-  <div
-    id="menu-movil"
-    class="hidden border-t border-white/10 bg-negro2/95 px-6 py-4 backdrop-blur min-[900px]:hidden"
-  >
-    <ul class="flex flex-col gap-1 text-sm font-bold uppercase tracking-[.08em]">
-      {links.map((l) => (
-        <li><a href={l.href} class="block py-2 text-crema/90 hover:text-ambar">{l.label}</a></li>
-      ))}
-      <li>
-        <a href={wa} class="mt-2 inline-flex items-center gap-2 rounded-lg bg-ambar px-5 py-2.5 font-extrabold text-[#20160a]"
-          >🍺 Reserva por WhatsApp</a
+  <nav aria-label="Principal">
+    <div class="mx-auto flex max-w-[1240px] items-center justify-between px-6 py-4">
+      <!-- logo -->
+      <a href="#inicio" class="leading-none text-crema">
+        <span
+          class="inline-block origin-left scale-x-[.85] whitespace-nowrap font-slab text-[1.75rem] font-black uppercase leading-none tracking-[.005em] [text-shadow:0_1px_10px_rgba(0,0,0,.5)]"
+          >Public <span class="text-ambar">House</span></span
         >
-      </li>
-    </ul>
-  </div>
-</nav>
+        <small class="mt-1.5 block font-body text-[0.5rem] font-semibold uppercase tracking-[.34em] text-tenue"
+          >Cervecería · Laureles</small
+        >
+      </a>
+
+      <!-- links escritorio -->
+      <ul class="hidden items-center gap-8 text-[0.82rem] font-bold uppercase tracking-[.08em] min-[900px]:flex">
+        {links.map((l) => (
+          <li>
+            <a href={l.href} class="text-crema/85 [text-shadow:0_1px_8px_rgba(0,0,0,.5)] transition hover:text-ambar hover:opacity-100">{l.label}</a>
+          </li>
+        ))}
+      </ul>
+
+      <a
+        href={wa}
+        class="hidden items-center gap-2 rounded-lg bg-ambar px-5 py-2.5 text-[0.8rem] font-extrabold tracking-[.02em] text-[#20160a] transition hover:-translate-y-0.5 hover:bg-ambar2 hover:shadow-[0_10px_24px_-8px_rgba(224,163,64,.6)] min-[900px]:inline-flex"
+        ><span aria-hidden="true">🍺</span> Reserva por WhatsApp</a
+      >
+
+      <!-- hamburguesa móvil -->
+      <button
+        id="burger"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        aria-controls="menu-movil"
+        class="p-1.5 min-[900px]:hidden"
+      >
+        <span class="mb-[7px] block h-[2.5px] w-[26px] rounded bg-crema"></span>
+        <span class="mb-[7px] block h-[2.5px] w-[26px] rounded bg-crema"></span>
+        <span class="block h-[2.5px] w-[26px] rounded bg-crema"></span>
+      </button>
+    </div>
+
+    <!-- menú móvil -->
+    <div
+      id="menu-movil"
+      class="hidden border-t border-white/10 bg-negro2/95 px-6 py-4 backdrop-blur min-[900px]:hidden"
+    >
+      <ul class="flex flex-col gap-1 text-sm font-bold uppercase tracking-[.08em]">
+        {links.map((l) => (
+          <li><a href={l.href} class="block py-2 text-crema/90 hover:text-ambar">{l.label}</a></li>
+        ))}
+        <li>
+          <a href={wa} class="mt-2 inline-flex items-center gap-2 rounded-lg bg-ambar px-5 py-2.5 font-extrabold text-[#20160a]"
+            ><span aria-hidden="true">🍺</span> Reserva por WhatsApp</a
+          >
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
 
 <script>
+  // header sólido al hacer scroll
+  const hdr = document.getElementById('site-header');
+  const onScroll = () => hdr?.classList.toggle('scrolled', window.scrollY > 30);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // menú móvil
   const b = document.getElementById('burger');
   const m = document.getElementById('menu-movil');
   b?.addEventListener('click', () => {
@@ -85,11 +95,11 @@ const wa = 'https://wa.me/573104445220';
     b.setAttribute('aria-expanded', String(open));
     b.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
   });
-  // cerrar al tocar un link
   m?.querySelectorAll('a').forEach((a) =>
     a.addEventListener('click', () => {
       m.classList.add('hidden');
       b?.setAttribute('aria-expanded', 'false');
+      b?.setAttribute('aria-label', 'Abrir menú');
     }),
   );
 </script>

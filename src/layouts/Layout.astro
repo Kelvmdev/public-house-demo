@@ -16,6 +16,9 @@ const ogImage = `${site}/og.jpg`;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="canonical" href={site} />
+    <meta name="theme-color" content="#141110" />
     <meta name="generator" content={Astro.generator} />
 
     <title>{title}</title>
@@ -23,11 +26,40 @@ const ogImage = `${site}/og.jpg`;
 
     <!-- Open Graph / redes -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Public House" />
+    <meta property="og:url" content={site} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Public House — cervecería en Laureles, Medellín" />
     <meta property="og:locale" content="es_CO" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- JSON-LD: negocio local (SEO / GEO) -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BarOrPub',
+      name: 'Public House',
+      description,
+      url: site,
+      image: ogImage,
+      telephone: '+573104445220',
+      priceRange: '$$',
+      servesCuisine: ['Cerveza artesanal', 'Alitas', 'Hamburguesas', 'Cócteles'],
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Transversal 40 · Diag. 74A #28',
+        addressLocality: 'Medellín',
+        addressRegion: 'Antioquia',
+        addressCountry: 'CO',
+      },
+      openingHours: 'Tu-Su 16:00-02:00',
+      aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.4', reviewCount: '538' },
+      sameAs: ['https://instagram.com/publichousemedellin'],
+    })} />
 
     <!-- Fuentes: Anton (titulares) · Rokkitt 900 (logo) · Mulish (cuerpo) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
