@@ -17,11 +17,11 @@
     "reviewCount": "538"
   },
   "nav": [
-    { "href": "#inicio", "label": "Inicio" },
-    { "href": "#menu", "label": "Menú" },
-    { "href": "#futbol", "label": "Fútbol" },
-    { "href": "#ambiente", "label": "Ambiente" },
-    { "href": "#ubicacion", "label": "Ubicación" }
+    { "href": "/#inicio", "label": "Inicio" },
+    { "href": "/#menu", "label": "Menú" },
+    { "href": "/#futbol", "label": "Fútbol" },
+    { "href": "/#ambiente", "label": "Ambiente" },
+    { "href": "/#ubicacion", "label": "Ubicación" }
   ],
   "pilares": [
     { "ic": "🍺", "t": "Cerveza artesanal", "s": "Nacionales e importadas" },
