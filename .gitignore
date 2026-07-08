@@ -28,3 +28,6 @@ pnpm-debug.log*
 
 # dev server log
 dev.log
+
+# reportes lighthouse locales
+lh*.json
