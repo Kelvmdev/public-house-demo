@@ -6,6 +6,7 @@ const {
   title = 'Public House — Cervecería en Laureles, Medellín',
   description = 'El pub de Laureles: cerveza artesanal e importada, fútbol en vivo, billar, dardos y las mejores alitas de la zona. Buen parche todos los días.',
   jsonLd = true, // solo la home; el 404 lo apaga con jsonLd={false}
+  preloadHero = true, // precarga el LCP; el 404 (sin hero) lo apaga
 } = Astro.props;
 
 const site = 'https://public-house-demo.vercel.app';
@@ -22,6 +23,7 @@ const ogImage = `${site}/og.jpg`;
     <link rel="canonical" href={site} />
     <meta name="theme-color" content="#141110" />
     <meta name="generator" content={Astro.generator} />
+    {preloadHero && <link rel="preload" as="image" href="/img/hero.webp" fetchpriority="high" />}
 
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -69,7 +71,15 @@ const ogImage = `${site}/og.jpg`;
     <link
       href="https://fonts.googleapis.com/css2?family=Anton&family=Rokkitt:wght@900&family=Mulish:wght@400;600;700;800&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Rokkitt:wght@900&family=Mulish:wght@400;600;700;800&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
   </head>
   <body class="bg-negro text-crema antialiased">
     <a

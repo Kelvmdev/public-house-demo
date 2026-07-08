@@ -31,24 +31,25 @@ const tabs = site.menu;
 
       <div class="mt-8">
         {tabs.map((t, i) => (
-          <ul
+          <div
             role="tabpanel"
             id={`panel-${t.id}`}
             aria-labelledby={`tab-${t.id}`}
             data-panel={t.id}
             hidden={i !== 0}
-            class="mx-auto grid max-w-2xl gap-1"
           >
-            {t.items.map(([name, desc, price]) => (
-              <li class="flex items-baseline gap-3 border-b border-white/10 py-4">
-                <div class="flex-1">
-                  <b class="font-display text-lg font-normal uppercase tracking-wide text-crema">{name}</b>
-                  <p class="text-sm text-tenue">{desc}</p>
-                </div>
-                <span class="whitespace-nowrap font-bold text-ambar">{price}</span>
-              </li>
-            ))}
-          </ul>
+            <ul class="mx-auto grid max-w-2xl gap-1">
+              {t.items.map(([name, desc, price]) => (
+                <li class="flex items-baseline gap-3 border-b border-white/10 py-4">
+                  <div class="flex-1">
+                    <b class="font-display text-lg font-normal uppercase tracking-wide text-crema">{name}</b>
+                    <p class="text-sm text-tenue">{desc}</p>
+                  </div>
+                  <span class="whitespace-nowrap font-bold text-ambar">{price}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         ))}
       </div>
     </div>
