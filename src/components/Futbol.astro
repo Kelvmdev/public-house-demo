@@ -1,0 +1,43 @@
+---
+const wa = 'https://wa.me/573104445220';
+---
+<section id="futbol" class="relative overflow-hidden bg-negro py-20 md:py-28">
+  <!-- resplandor ámbar de fondo -->
+  <div class="pointer-events-none absolute -right-40 top-1/2 h-[36rem] w-[36rem] -translate-y-1/2 rounded-full bg-ambar/10 blur-3xl"></div>
+
+  <div class="mx-auto grid max-w-[1240px] items-center gap-12 px-6 md:grid-cols-[1.1fr_.9fr]">
+    <div class="reveal">
+      <p class="mb-5 flex items-center gap-3.5 text-[0.78rem] font-extrabold uppercase tracking-[.24em] text-amarillo">
+        <span class="h-0.5 w-[46px] bg-amarillo"></span>Todos los partidos
+      </p>
+      <h2 class="font-display text-[clamp(2.2rem,5vw,4rem)] font-normal uppercase leading-[.98]">
+        Vive el fútbol<br /><span class="text-ambar">como en el estadio</span>
+      </h2>
+      <p class="mt-6 max-w-lg text-[1.05rem] leading-relaxed text-crema/85">
+        Selección Colombia, Champions, la Liga y los clásicos que no te puedes perder —
+        pantallas grandes, sonido a todo volumen y el parche cantando cada gol. Reserva tu mesa
+        antes del pito inicial.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        {['⚽ Selección Colombia', '🏆 Champions League', '🇪🇺 Ligas de Europa', '🍺 Promos en partido'].map((t) => (
+          <span class="rounded-full border border-white/15 bg-negro2 px-4 py-2 text-sm font-semibold text-crema/90">{t}</span>
+        ))}
+      </div>
+      <a href={wa} class="mt-8 inline-flex items-center gap-2.5 rounded-[.6rem] bg-ambar px-7 py-4 font-extrabold text-negro2 transition hover:-translate-y-0.5 hover:bg-ambar2"
+        >📅 Reserva para el próximo partido</a
+      >
+    </div>
+
+    <div class="reveal relative">
+      <img
+        src="/img/futbol.webp"
+        alt="Ambiente lleno viendo el partido en Public House"
+        loading="lazy"
+        class="aspect-[4/3] w-full rounded-2xl object-cover shadow-2xl"
+      />
+      <div class="absolute left-4 top-4 flex items-center gap-2 rounded-full bg-rojo px-3.5 py-1.5 text-sm font-bold text-crema shadow-lg">
+        <span class="h-2 w-2 animate-pulse rounded-full bg-crema"></span> EN VIVO
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,98 @@
+---
+// Menú con pestañas. Datos de demo (plausibles) — el cliente los ajusta luego.
+const tabs = [
+  {
+    id: 'cervezas',
+    label: '🍺 Cervezas',
+    items: [
+      ['Artesanal de la casa', 'Rubia, roja o negra — de barril', '$12.000'],
+      ['Importadas', 'Paulaner, Hoegaarden, Corona, HB', '$16.000'],
+      ['Michelada del parche', 'Limón, sal, salsas de la casa', '$14.000'],
+      ['Torre de cerveza 3L', 'Para compartir con el parche', '$95.000'],
+    ],
+  },
+  {
+    id: 'comida',
+    label: '🍗 Alitas & comida',
+    items: [
+      ['Alitas (10 uds)', 'BBQ, buffalo, miel-mostaza o parmesano', '$32.000'],
+      ['Burger Public', 'Doble carne, tocineta, cheddar, papas', '$28.000'],
+      ['Picada del pub', 'Chorizo, chicharrón, papa, arepa', '$45.000'],
+      ['Papas cargadas', 'Queso, tocineta y cebollín', '$22.000'],
+    ],
+  },
+  {
+    id: 'cocteles',
+    label: '🍹 Cócteles',
+    items: [
+      ['Gin tonic', 'Con botánicos y toque cítrico', '$24.000'],
+      ['Mojito clásico', 'Menta fresca y ron', '$22.000'],
+      ['Aperol spritz', 'Burbujeante y refrescante', '$26.000'],
+      ['Shots del parche', 'Ronda de 4 — pídelos en la barra', '$30.000'],
+    ],
+  },
+];
+---
+<section id="menu" class="bg-negro2 py-20 md:py-28">
+  <div class="mx-auto max-w-[1100px] px-6">
+    <div class="reveal mx-auto max-w-2xl text-center">
+      <p class="mb-5 flex items-center justify-center gap-3.5 text-[0.78rem] font-extrabold uppercase tracking-[.24em] text-ambar">
+        <span class="h-0.5 w-[46px] bg-ambar"></span>Carta<span class="h-0.5 w-[46px] bg-ambar"></span>
+      </p>
+      <h2 class="font-display text-[clamp(2rem,4.5vw,3.4rem)] font-normal uppercase leading-[1.02]">
+        Para acompañar <span class="text-ambar">cada gol</span>
+      </h2>
+    </div>
+
+    <!-- pestañas -->
+    <div class="reveal mt-10">
+      <div role="tablist" aria-label="Categorías del menú" class="mx-auto flex max-w-md flex-wrap justify-center gap-2">
+        {tabs.map((t, i) => (
+          <button
+            role="tab"
+            id={`tab-${t.id}`}
+            aria-controls={`panel-${t.id}`}
+            aria-selected={i === 0 ? 'true' : 'false'}
+            data-tab={t.id}
+            class="menu-tab rounded-full border border-white/15 px-5 py-2.5 text-sm font-bold transition aria-selected:border-ambar aria-selected:bg-ambar aria-selected:text-negro2"
+          >{t.label}</button>
+        ))}
+      </div>
+
+      <div class="mt-8">
+        {tabs.map((t, i) => (
+          <ul
+            role="tabpanel"
+            id={`panel-${t.id}`}
+            aria-labelledby={`tab-${t.id}`}
+            data-panel={t.id}
+            hidden={i !== 0}
+            class="mx-auto grid max-w-2xl gap-1"
+          >
+            {t.items.map(([name, desc, price]) => (
+              <li class="flex items-baseline gap-3 border-b border-white/10 py-4">
+                <div class="flex-1">
+                  <b class="font-display text-lg font-normal uppercase tracking-wide text-crema">{name}</b>
+                  <p class="text-sm text-tenue">{desc}</p>
+                </div>
+                <span class="whitespace-nowrap font-bold text-ambar">{price}</span>
+              </li>
+            ))}
+          </ul>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const tabsEl = document.querySelectorAll<HTMLButtonElement>('.menu-tab');
+  const panels = document.querySelectorAll<HTMLElement>('[data-panel]');
+  tabsEl.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.tab;
+      tabsEl.forEach((b) => b.setAttribute('aria-selected', String(b === btn)));
+      panels.forEach((p) => (p.hidden = p.dataset.panel !== id));
+    });
+  });
+</script>

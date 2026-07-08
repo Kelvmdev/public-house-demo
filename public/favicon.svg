@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <rect width="128" height="128" rx="26" fill="#141110"/>
+  <text x="50%" y="52%" dominant-baseline="central" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif" font-weight="900" font-size="70"
+        letter-spacing="-4">
+    <tspan fill="#F4EEE2">P</tspan><tspan fill="#E0A340">H</tspan>
+  </text>
+</svg>

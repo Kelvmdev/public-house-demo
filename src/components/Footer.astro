@@ -1,0 +1,51 @@
+---
+const wa = 'https://wa.me/573104445220';
+const ig = 'https://instagram.com/publichousemedellin';
+const links = [
+  { href: '#inicio', label: 'Inicio' },
+  { href: '#menu', label: 'Menú' },
+  { href: '#futbol', label: 'Fútbol' },
+  { href: '#ambiente', label: 'Ambiente' },
+  { href: '#ubicacion', label: 'Ubicación' },
+];
+const year = 2026;
+---
+<footer class="border-t border-white/10 bg-negro2 py-14">
+  <div class="mx-auto grid max-w-[1240px] gap-10 px-6 md:grid-cols-[1.4fr_1fr_1fr]">
+    <div>
+      <span class="inline-block origin-left scale-x-[.85] whitespace-nowrap font-slab text-2xl font-black uppercase leading-none text-crema"
+        >Public <span class="text-ambar">House</span></span
+      >
+      <p class="mt-4 max-w-xs text-sm leading-relaxed text-tenue">
+        La cervecería de Laureles: birra, fútbol en vivo y el mejor parche de la zona.
+      </p>
+      <div class="mt-5 flex gap-3">
+        <a href={ig} target="_blank" rel="noopener" class="rounded-lg border border-white/15 px-4 py-2 text-sm font-semibold text-crema/90 transition hover:border-ambar hover:text-ambar">📸 Instagram</a>
+        <a href={wa} class="rounded-lg border border-white/15 px-4 py-2 text-sm font-semibold text-crema/90 transition hover:border-ambar hover:text-ambar">💬 WhatsApp</a>
+      </div>
+    </div>
+
+    <nav aria-label="Enlaces del pie">
+      <h3 class="mb-4 font-display text-sm font-normal uppercase tracking-widest text-ambar">Menú</h3>
+      <ul class="space-y-2 text-sm">
+        {links.map((l) => (
+          <li><a href={l.href} class="text-crema/80 transition hover:text-ambar">{l.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <div>
+      <h3 class="mb-4 font-display text-sm font-normal uppercase tracking-widest text-ambar">Contacto</h3>
+      <address class="space-y-2 text-sm not-italic text-crema/80">
+        <p>Transversal 40 · Diag. 74A #28<br />Laureles, Medellín</p>
+        <p>Tel: <a href={wa} class="hover:text-ambar">310 444 5220</a></p>
+        <p>Mar–Dom · 4:00 p.m. – 2:00 a.m.</p>
+      </address>
+    </div>
+  </div>
+
+  <div class="mx-auto mt-10 flex max-w-[1240px] flex-col items-center justify-between gap-2 border-t border-white/10 px-6 pt-6 text-xs text-tenue sm:flex-row">
+    <p>© {year} Public House · Laureles, Medellín</p>
+    <p>Hecho con 🍺 por <a href="https://pixelweb.col" class="text-crema/70 hover:text-ambar">PixelWeb</a></p>
+  </div>
+</footer>

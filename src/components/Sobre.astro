@@ -1,0 +1,45 @@
+---
+// Sobre el pub — imagen (pared de ladrillo/neón) + texto con badge
+---
+<section id="sobre" class="bg-negro py-20 md:py-28">
+  <div class="mx-auto grid max-w-[1240px] items-center gap-10 px-6 md:grid-cols-2 md:gap-14">
+    <div class="reveal relative">
+      <img
+        src="/img/sobre.webp"
+        alt="Pared de ladrillo con neón y jarras de cerveza en Public House"
+        loading="lazy"
+        class="aspect-[4/5] w-full rounded-2xl object-cover shadow-2xl"
+      />
+      <div class="absolute -bottom-5 -right-4 rounded-xl bg-ambar px-5 py-4 text-center text-negro2 shadow-xl md:-right-6">
+        <b class="block font-display text-3xl leading-none">4.4★</b>
+        <small class="text-[0.72rem] font-bold uppercase tracking-widest">en Google</small>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <p class="mb-5 flex items-center gap-3.5 text-[0.78rem] font-extrabold uppercase tracking-[.24em] text-ambar">
+        <span class="h-0.5 w-[46px] bg-ambar"></span>El pub del barrio
+      </p>
+      <h2 class="font-display text-[clamp(2rem,4.5vw,3.4rem)] font-normal uppercase leading-[1.02]">
+        Una cervecería con <span class="text-ambar">alma de barrio</span>
+      </h2>
+      <p class="mt-6 text-[1.05rem] leading-relaxed text-crema/85">
+        En pleno corazón de Laureles, Public House es donde el parche se arma solo: birra
+        importada y artesanal, la mejor cocina de barra y los partidos siempre en pantalla grande.
+        Ladrillo, madera y luz cálida para que te quedes hasta el último tiempo.
+      </p>
+      <ul class="mt-8 grid grid-cols-2 gap-4 text-sm">
+        {[
+          ['🍺', 'Birra de todo el mundo'],
+          ['⚽', 'Fútbol en vivo'],
+          ['🎱', 'Billar & dardos'],
+          ['🎶', 'Buen ambiente'],
+        ].map(([ic, t]) => (
+          <li class="flex items-center gap-3 rounded-lg border border-white/10 bg-negro2 px-4 py-3">
+            <span class="text-xl">{ic}</span><span class="font-semibold text-crema/90">{t}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+/* Tokens de marca Public House — se vuelven utilidades: bg-negro, text-ambar, etc. */
+@theme {
+  --color-negro: #141110;   /* negro cálido */
+  --color-negro2: #0d0b0a;
+  --color-ambar: #e0a340;   /* dorado/ámbar */
+  --color-ambar2: #f0c072;
+  --color-crema: #f4eee2;
+  --color-tenue: #b9ad9a;
+  --color-rojo: #c0492f;
+  --color-amarillo: #f5c518; /* acento fútbol */
+
+  --font-display: "Anton", sans-serif;   /* titulares */
+  --font-slab: "Rokkitt", serif;         /* logo / destacados */
+  --font-body: "Mulish", sans-serif;     /* cuerpo */
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); }
+
+/* animación de entrada del hero (al cargar) */
+@keyframes rise { to { opacity: 1; transform: none; } }
+.rise { opacity: 0; transform: translateY(22px); animation: rise .8s cubic-bezier(.2,.7,.2,1) forwards; }
+
+/* reveal al hacer scroll (secciones internas) */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
+.reveal.is-visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .rise, .reveal { animation: none; opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+}
