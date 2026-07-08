@@ -37,11 +37,36 @@ section[id], header[id] { scroll-margin-top: 6rem; }
 @keyframes rise { to { opacity: 1; transform: none; } }
 .rise { opacity: 0; transform: translateY(22px); animation: rise .8s cubic-bezier(.2,.7,.2,1) forwards; }
 
+/* delays escalonados de las entradas del hero */
+.d1 { animation-delay: .15s; }
+.d2 { animation-delay: .32s; }
+.d3 { animation-delay: .5s; }
+.d4 { animation-delay: .66s; }
+.d5 { animation-delay: .82s; }
+
+/* Hero: fondo con zoom lento + degradados para legibilidad */
+.hero-bg {
+  background: url('/img/hero.webp') center 45% / cover no-repeat;
+  animation: zoom 18s ease-out forwards;
+}
+@keyframes zoom { from { transform: scale(1.08); } to { transform: scale(1); } }
+.hero-shade {
+  background:
+    linear-gradient(90deg, rgba(12,10,9,.94) 0%, rgba(12,10,9,.78) 42%, rgba(12,10,9,.45) 100%),
+    linear-gradient(0deg, rgba(12,10,9,.96) 2%, rgba(12,10,9,0) 40%);
+}
+@media (max-width: 820px) {
+  .hero-shade {
+    background: linear-gradient(0deg, rgba(12,10,9,.97) 8%, rgba(12,10,9,.35) 62%, rgba(12,10,9,.6) 100%);
+  }
+}
+
 /* reveal al hacer scroll (secciones internas) */
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
 .reveal.is-visible { opacity: 1; transform: none; }
 
 @media (prefers-reduced-motion: reduce) {
   .rise, .reveal { animation: none; opacity: 1; transform: none; transition: none; }
+  .hero-bg { animation: none; }
   html { scroll-behavior: auto; }
 }

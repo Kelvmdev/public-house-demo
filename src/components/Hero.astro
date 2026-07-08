@@ -4,25 +4,25 @@ const wa = 'https://wa.me/573104445220';
 
 <header id="inicio" class="relative flex min-h-[100svh] items-center overflow-hidden isolate">
   <!-- fondo con zoom lento -->
-  <div class="hero-bg absolute inset-0 -z-20 bg-cover bg-no-repeat" style="background-image:url('/img/hero.webp');background-position:center 45%"></div>
+  <div class="hero-bg absolute inset-0 -z-20"></div>
   <!-- degradados para legibilidad -->
   <div class="hero-shade absolute inset-0 -z-10"></div>
 
   <div class="mx-auto w-full max-w-[1240px] px-6 pb-12 pt-28">
     <div class="max-w-[660px]">
-      <p class="rise mb-6 flex items-center gap-3.5 text-[0.78rem] font-extrabold uppercase tracking-[.24em] text-ambar" style="animation-delay:.15s">
-        <span class="h-0.5 w-[46px] bg-ambar"></span>Pub · Cervecería · Laureles, Medellín
+      <p class="rise d1 mb-6 flex items-center gap-3.5 text-[0.78rem] font-extrabold uppercase tracking-[.24em] text-ambar">
+        <span class="h-0.5 w-12 bg-ambar"></span>Pub · Cervecería · Laureles, Medellín
       </p>
 
-      <h1 class="rise font-display text-[clamp(2.7rem,6.4vw,5.4rem)] font-normal uppercase leading-[.96] tracking-[.005em] text-balance" style="animation-delay:.32s">
+      <h1 class="rise d2 font-display text-[clamp(2.7rem,6.4vw,5.4rem)] font-normal uppercase leading-[.96] tracking-[.005em] text-balance">
         Cerveza artesanal,<br /><span class="text-ambar">fútbol en vivo</span><br />y buen parche.
       </h1>
 
-      <p class="rise mt-6 max-w-[33rem] text-[clamp(1rem,1.5vw,1.18rem)] leading-relaxed text-crema/90" style="animation-delay:.5s">
+      <p class="rise d3 mt-6 max-w-[33rem] text-[clamp(1rem,1.5vw,1.18rem)] leading-relaxed text-crema/90">
         El pub de Laureles: birra de todo el mundo, los partidos en pantalla grande, billar, dardos y las mejores alitas de la zona.
       </p>
 
-      <div class="rise mt-9 flex flex-wrap gap-4" style="animation-delay:.66s">
+      <div class="rise d4 mt-9 flex flex-wrap gap-4">
         <a href={wa} class="inline-flex items-center gap-2.5 rounded-[.6rem] bg-ambar px-7 py-4 text-[0.95rem] font-extrabold text-[#20160a] transition hover:-translate-y-0.5 hover:bg-ambar2 hover:shadow-[0_14px_30px_-10px_rgba(224,163,64,.6)]"
           >🍺 Reserva tu mesa</a
         >
@@ -31,7 +31,7 @@ const wa = 'https://wa.me/573104445220';
         >
       </div>
 
-      <p class="rise mt-6 text-[0.85rem] tracking-[.02em] text-tenue" style="animation-delay:.82s">
+      <p class="rise d5 mt-6 text-[0.85rem] tracking-[.02em] text-tenue">
         <span class="text-amarillo" aria-hidden="true">★</span> <b class="text-crema">4.4</b> en Google · Cervecería desde el barrio
       </p>
     </div>
@@ -57,19 +57,3 @@ const wa = 'https://wa.me/573104445220';
     ))}
   </div>
 </div>
-
-<style>
-  .hero-bg { animation: zoom 18s ease-out forwards; }
-  @keyframes zoom { from { transform: scale(1.08); } to { transform: scale(1); } }
-  .hero-shade {
-    background:
-      linear-gradient(90deg, rgba(12,10,9,.94) 0%, rgba(12,10,9,.78) 42%, rgba(12,10,9,.45) 100%),
-      linear-gradient(0deg, rgba(12,10,9,.96) 2%, rgba(12,10,9,0) 40%);
-  }
-  @media (max-width: 820px) {
-    .hero-shade {
-      background: linear-gradient(0deg, rgba(12,10,9,.97) 8%, rgba(12,10,9,.35) 62%, rgba(12,10,9,.6) 100%);
-    }
-  }
-  @media (prefers-reduced-motion: reduce) { .hero-bg { animation: none; } }
-</style>

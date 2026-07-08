@@ -8,7 +8,7 @@ const mapLink = `https://www.google.com/maps/search/?api=1&query=${mapQuery}`;
   <div class="mx-auto grid max-w-[1240px] gap-10 px-6 md:grid-cols-2 md:gap-14">
     <div class="reveal">
       <p class="mb-5 flex items-center gap-3.5 text-[0.78rem] font-extrabold uppercase tracking-[.24em] text-ambar">
-        <span class="h-0.5 w-[46px] bg-ambar"></span>Dónde estamos
+        <span class="h-0.5 w-12 bg-ambar"></span>Dónde estamos
       </p>
       <h2 class="font-display text-[clamp(2rem,4.5vw,3.4rem)] font-normal uppercase leading-[1.02]">
         Te esperamos en <span class="text-ambar">Laureles</span>
@@ -36,14 +36,13 @@ const mapLink = `https://www.google.com/maps/search/?api=1&query=${mapQuery}`;
     </div>
 
     <!-- mapa con anti-hijack: overlay que se quita al hacer clic -->
-    <div class="reveal group relative min-h-[320px] overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
+    <div class="reveal group relative min-h-80 overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
       <iframe
         title="Ubicación de Public House en Laureles, Medellín"
         src={mapEmbed}
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
-        class="absolute inset-0 h-full w-full"
-        style="border:0"
+        class="absolute inset-0 h-full w-full border-0"
       ></iframe>
       <button
         type="button"
