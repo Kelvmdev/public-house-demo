@@ -1,21 +1,67 @@
 {
+  "url": "https://public-house-demo.vercel.app",
   "contacto": {
-    "whatsapp": "573104445220",
-    "whatsappUrl": "https://wa.me/573104445220",
-    "whatsappDisplay": "310 444 5220",
+    "whatsapp": "573044341758",
+    "whatsappUrl": "https://wa.me/573044341758",
+    "whatsappDisplay": "304 434 1758",
     "instagram": "https://instagram.com/publichousemedellin",
-    "direccionL1": "Transversal 40 · Diag. 74A #28",
+    "direccionL1": "Transversal 40 #74A-29",
     "direccionL2": "Laureles, Medellín",
-    "direccionFull": "Transversal 40 · Diag. 74A #28 — Laureles, Medellín",
+    "direccionFull": "Transversal 40 #74A-29 — Laureles, Medellín",
     "horario": "Martes a domingo · 4:00 p.m. – 2:00 a.m.",
     "horarioCorto": "Mar–Dom · 4:00 p.m. – 2:00 a.m.",
-    "openingHoursSchema": "Tu-Su 16:00-02:00"
+    "openingHoursSchema": "Tu-Su 16:00-02:00",
+    "lat": "6.246116",
+    "lon": "-75.596726"
   },
   "marca": {
     "nombre": "Public House",
     "tagline": "La cervecería de Laureles: birra, fútbol en vivo y el mejor parche de la zona.",
     "rating": "4.4",
     "reviewCount": "538"
+  },
+  "hero": {
+    "eyebrow": "Pub · Cervecería · Laureles, Medellín",
+    "h1": "Cerveza artesanal,<br /><span class=\"text-ambar\">fútbol en vivo</span><br />y buen parche.",
+    "parrafo": "El pub de Laureles: birra de todo el mundo, los partidos en pantalla grande, billar, dardos y las mejores alitas de la zona.",
+    "ctaPrimario": "Reserva tu mesa",
+    "ctaSecundario": "Ver el menú",
+    "ratingNota": "en Google · Cervecería desde el barrio"
+  },
+  "sobre": {
+    "eyebrow": "El pub del barrio",
+    "h2": "Una cervecería con <span class=\"text-ambar\">alma de barrio</span>",
+    "parrafo": "En pleno corazón de Laureles, Public House es donde el parche se arma solo: birra importada y artesanal, la mejor cocina de barra y los partidos siempre en pantalla grande. Ladrillo, madera y luz cálida para que te quedes hasta el último tiempo."
+  },
+  "futbol": {
+    "eyebrow": "Todos los partidos",
+    "h2": "Vive el fútbol<br /><span class=\"text-ambar\">como en el estadio</span>",
+    "parrafo": "Selección Colombia, Champions, la Liga y los clásicos que no te puedes perder — pantallas grandes, sonido a todo volumen y el parche cantando cada gol. Reserva tu mesa antes del pito inicial.",
+    "cta": "Reserva para el próximo partido"
+  },
+  "menuHead": {
+    "eyebrow": "Carta",
+    "h2": "Para acompañar <span class=\"text-ambar\">cada gol</span>"
+  },
+  "ambiente": {
+    "eyebrow": "El parche",
+    "h2": "Así se vive <span class=\"text-ambar\">Public House</span>",
+    "galeria": [
+      { "src": "/img/g-bartender.webp", "alt": "Bartender sirviendo una cerveza en Public House", "span": "md:col-span-2 md:row-span-2" },
+      { "src": "/img/g-alitas.webp", "alt": "Alitas de la casa servidas en Public House", "span": "" },
+      { "src": "/img/g-taps.webp", "alt": "Grifos de cerveza artesanal e importada", "span": "" },
+      { "src": "/img/g-pour.webp", "alt": "Sirviendo una cerveza de barril bien fría", "span": "" },
+      { "src": "/img/g-chat.webp", "alt": "El parche compartiendo en la barra del pub", "span": "" }
+    ]
+  },
+  "ubicacionHead": {
+    "eyebrow": "Dónde estamos",
+    "h2": "Te esperamos en <span class=\"text-ambar\">Laureles</span>"
+  },
+  "cta": {
+    "h2": "Arma tu parche en Public House",
+    "parrafo": "Reserva tu mesa, pregunta por el partido del día o pídenos los combos para grupos. Te respondemos por WhatsApp al toque.",
+    "boton": "Escríbenos por WhatsApp"
   },
   "nav": [
     { "href": "/#inicio", "label": "Inicio" },

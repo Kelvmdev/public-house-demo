@@ -2,16 +2,15 @@
 // Menú con pestañas. Contenido editable en src/data/site.json (precios, items).
 import site from '../data/site.json';
 const tabs = site.menu;
+const head = site.menuHead;
 ---
 <section id="menu" class="bg-negro2 py-20 md:py-28">
   <div class="mx-auto max-w-[1100px] px-6">
     <div class="reveal mx-auto max-w-2xl text-center">
       <p class="mb-5 flex items-center justify-center gap-3.5 text-[0.78rem] font-extrabold uppercase tracking-[.24em] text-ambar">
-        <span class="h-0.5 w-12 bg-ambar"></span>Carta<span class="h-0.5 w-12 bg-ambar"></span>
+        <span class="h-0.5 w-12 bg-ambar"></span>{head.eyebrow}<span class="h-0.5 w-12 bg-ambar"></span>
       </p>
-      <h2 class="font-display text-[clamp(2rem,4.5vw,3.4rem)] font-normal uppercase leading-[1.02]">
-        Para acompañar <span class="text-ambar">cada gol</span>
-      </h2>
+      <h2 class="font-display text-[clamp(2rem,4.5vw,3.4rem)] font-normal uppercase leading-[1.02]" set:html={head.h2}></h2>
     </div>
 
     <!-- pestañas -->

@@ -3,6 +3,7 @@ import site from '../data/site.json';
 const wa = site.contacto.whatsappUrl;
 const pilares = site.pilares;
 const { rating } = site.marca;
+const h = site.hero;
 ---
 
 <header id="inicio" class="relative flex min-h-[100svh] items-center overflow-hidden isolate">
@@ -14,28 +15,26 @@ const { rating } = site.marca;
   <div class="mx-auto w-full max-w-[1240px] px-6 pb-12 pt-28">
     <div class="max-w-[660px]">
       <p class="rise d1 mb-6 flex items-center gap-3.5 text-[0.78rem] font-extrabold uppercase tracking-[.24em] text-ambar">
-        <span class="h-0.5 w-12 bg-ambar"></span>Pub · Cervecería · Laureles, Medellín
+        <span class="h-0.5 w-12 bg-ambar"></span>{h.eyebrow}
       </p>
 
-      <h1 class="rise d2 font-display text-[clamp(2.7rem,6.4vw,5.4rem)] font-normal uppercase leading-[.96] tracking-[.005em] text-balance">
-        Cerveza artesanal,<br /><span class="text-ambar">fútbol en vivo</span><br />y buen parche.
-      </h1>
+      <h1 class="rise d2 font-display text-[clamp(2.7rem,6.4vw,5.4rem)] font-normal uppercase leading-[.96] tracking-[.005em] text-balance" set:html={h.h1}></h1>
 
       <p class="rise d3 mt-6 max-w-[33rem] text-[clamp(1rem,1.5vw,1.18rem)] leading-relaxed text-crema/90">
-        El pub de Laureles: birra de todo el mundo, los partidos en pantalla grande, billar, dardos y las mejores alitas de la zona.
+        {h.parrafo}
       </p>
 
       <div class="rise d4 mt-9 flex flex-wrap gap-4">
         <a href={wa} class="inline-flex items-center gap-2.5 rounded-[.6rem] bg-ambar px-7 py-4 text-[0.95rem] font-extrabold text-[#20160a] transition active:scale-95 hover:-translate-y-0.5 hover:bg-ambar2 hover:shadow-[0_14px_30px_-10px_rgba(224,163,64,.6)]"
-          ><span aria-hidden="true">🍺</span> Reserva tu mesa</a
+          ><span aria-hidden="true">🍺</span> {h.ctaPrimario}</a
         >
         <a href="#menu" class="inline-flex items-center gap-2.5 rounded-[.6rem] border-[1.5px] border-[#6b5a44] px-7 py-4 text-[0.95rem] font-extrabold text-crema transition active:scale-95 hover:-translate-y-0.5 hover:border-ambar hover:text-ambar"
-          >Ver el menú</a
+          >{h.ctaSecundario}</a
         >
       </div>
 
       <p class="rise d5 mt-6 text-[0.85rem] tracking-[.02em] text-tenue">
-        <span class="text-amarillo" aria-hidden="true">★</span> <b class="text-crema">{rating}</b> en Google · Cervecería desde el barrio
+        <span class="text-amarillo" aria-hidden="true">★</span> <b class="text-crema">{rating}</b> {h.ratingNota}
       </p>
     </div>
   </div>

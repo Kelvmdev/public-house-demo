@@ -1,0 +1,19 @@
+# Public House — Cervecería y pub en Laureles, Medellín
+
+> Pub y cervecería en el barrio Laureles (Medellín, Antioquia, Colombia). Cerveza artesanal e importada, fútbol en vivo en pantallas gigantes, billar, dardos, alitas y hamburguesas. Buen parche de la zona. Calificación 4.4 en Google (538 reseñas).
+
+## Datos del negocio
+- Dirección: Transversal 40 #74A-29, Laureles, Medellín, Antioquia, Colombia
+- Coordenadas: 6.246116, -75.596726
+- Horario: martes a domingo, 4:00 p.m. – 2:00 a.m.
+- Reservas / contacto (WhatsApp): +57 304 434 1758
+- Instagram: https://instagram.com/publichousemedellin
+
+## Qué ofrece
+- Cervezas: artesanal de la casa (rubia, roja o negra de barril), importadas (Paulaner, Hoegaarden, Corona, HB), michelada, torre de cerveza de 3L para compartir.
+- Comida: alitas (BBQ, buffalo, miel-mostaza, parmesano), Burger Public, picada del pub, papas cargadas.
+- Cócteles: gin tonic, mojito, aperol spritz, shots.
+- Ambiente: fútbol en vivo (Selección Colombia, Champions, ligas de Europa), billar y dardos, música y buen parche.
+
+## Páginas
+- https://public-house-demo.vercel.app/ — sitio principal (menú, fútbol, ambiente, ubicación, contacto)

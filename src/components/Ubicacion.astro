@@ -2,19 +2,18 @@
 import site from '../data/site.json';
 const wa = site.contacto.whatsappUrl;
 const { direccionFull, horario, whatsappDisplay } = site.contacto;
-const mapQuery = 'Public+House+Laureles+Transversal+40+Diagonal+74A+Medellin';
-const mapEmbed = `https://www.google.com/maps?q=${mapQuery}&output=embed`;
-const mapLink = `https://www.google.com/maps/search/?api=1&query=${mapQuery}`;
+const head = site.ubicacionHead;
+const { lat, lon } = site.contacto;
+const mapEmbed = `https://www.google.com/maps?q=${lat},${lon}&z=17&hl=es&output=embed`;
+const mapLink = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lon}`;
 ---
 <section id="ubicacion" class="bg-negro py-20 md:py-28">
   <div class="mx-auto grid max-w-[1240px] gap-10 px-6 md:grid-cols-2 md:gap-14">
     <div class="reveal">
       <p class="mb-5 flex items-center gap-3.5 text-[0.78rem] font-extrabold uppercase tracking-[.24em] text-ambar">
-        <span class="h-0.5 w-12 bg-ambar"></span>Dónde estamos
+        <span class="h-0.5 w-12 bg-ambar"></span>{head.eyebrow}
       </p>
-      <h2 class="font-display text-[clamp(2rem,4.5vw,3.4rem)] font-normal uppercase leading-[1.02]">
-        Te esperamos en <span class="text-ambar">Laureles</span>
-      </h2>
+      <h2 class="font-display text-[clamp(2rem,4.5vw,3.4rem)] font-normal uppercase leading-[1.02]" set:html={head.h2}></h2>
 
       <div class="mt-8 space-y-5 text-crema/90">
         <div class="flex gap-4">

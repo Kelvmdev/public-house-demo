@@ -2,6 +2,7 @@
 import site from '../data/site.json';
 const wa = site.contacto.whatsappUrl;
 const tags = site.futbolTags;
+const f = site.futbol;
 ---
 <section id="futbol" class="relative overflow-hidden bg-negro py-20 md:py-28">
   <!-- resplandor ámbar de fondo -->
@@ -10,15 +11,11 @@ const tags = site.futbolTags;
   <div class="mx-auto grid max-w-[1240px] items-center gap-12 px-6 md:grid-cols-[1.1fr_.9fr]">
     <div class="reveal">
       <p class="mb-5 flex items-center gap-3.5 text-[0.78rem] font-extrabold uppercase tracking-[.24em] text-amarillo">
-        <span class="h-0.5 w-12 bg-amarillo"></span>Todos los partidos
+        <span class="h-0.5 w-12 bg-amarillo"></span>{f.eyebrow}
       </p>
-      <h2 class="font-display text-[clamp(2.2rem,5vw,4rem)] font-normal uppercase leading-[.98]">
-        Vive el fútbol<br /><span class="text-ambar">como en el estadio</span>
-      </h2>
+      <h2 class="font-display text-[clamp(2.2rem,5vw,4rem)] font-normal uppercase leading-[.98]" set:html={f.h2}></h2>
       <p class="mt-6 max-w-lg text-[1.05rem] leading-relaxed text-crema/85">
-        Selección Colombia, Champions, la Liga y los clásicos que no te puedes perder —
-        pantallas grandes, sonido a todo volumen y el parche cantando cada gol. Reserva tu mesa
-        antes del pito inicial.
+        {f.parrafo}
       </p>
       <div class="mt-8 flex flex-wrap gap-3">
         {tags.map((t) => (
@@ -26,7 +23,7 @@ const tags = site.futbolTags;
         ))}
       </div>
       <a href={wa} class="mt-8 inline-flex items-center gap-2.5 rounded-[.6rem] bg-ambar px-7 py-4 font-extrabold text-negro2 transition active:scale-95 hover:-translate-y-0.5 hover:bg-ambar2"
-        ><span aria-hidden="true">📅</span> Reserva para el próximo partido</a
+        ><span aria-hidden="true">📅</span> {f.cta}</a
       >
     </div>
 

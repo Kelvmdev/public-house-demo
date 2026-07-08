@@ -9,7 +9,7 @@ const {
   preloadHero = true, // precarga el LCP; el 404 (sin hero) lo apaga
 } = Astro.props;
 
-const site = 'https://public-house-demo.vercel.app';
+const site = siteData.url; // fuente única del dominio (robots.txt/sitemap.xml son estáticos, ver public/)
 const ogImage = `${site}/og.jpg`;
 ---
 
@@ -59,6 +59,11 @@ const ogImage = `${site}/og.jpg`;
         addressLocality: 'Medellín',
         addressRegion: 'Antioquia',
         addressCountry: 'CO',
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: siteData.contacto.lat,
+        longitude: siteData.contacto.lon,
       },
       openingHours: siteData.contacto.openingHoursSchema,
       aggregateRating: { '@type': 'AggregateRating', ratingValue: siteData.marca.rating, reviewCount: siteData.marca.reviewCount },
