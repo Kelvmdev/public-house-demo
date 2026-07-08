@@ -1,5 +1,7 @@
 ---
-const wa = 'https://wa.me/573104445220';
+import site from '../data/site.json';
+const wa = site.contacto.whatsappUrl;
+const tags = site.futbolTags;
 ---
 <section id="futbol" class="relative overflow-hidden bg-negro py-20 md:py-28">
   <!-- resplandor ámbar de fondo -->
@@ -19,7 +21,7 @@ const wa = 'https://wa.me/573104445220';
         antes del pito inicial.
       </p>
       <div class="mt-8 flex flex-wrap gap-3">
-        {['⚽ Selección Colombia', '🏆 Champions League', '🇪🇺 Ligas de Europa', '🍺 Promos en partido'].map((t) => (
+        {tags.map((t) => (
           <span class="rounded-full border border-white/15 bg-negro2 px-4 py-2 text-sm font-semibold text-crema/90">{t}</span>
         ))}
       </div>

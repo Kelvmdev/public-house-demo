@@ -1,0 +1,77 @@
+{
+  "contacto": {
+    "whatsapp": "573104445220",
+    "whatsappUrl": "https://wa.me/573104445220",
+    "whatsappDisplay": "310 444 5220",
+    "instagram": "https://instagram.com/publichousemedellin",
+    "direccionL1": "Transversal 40 · Diag. 74A #28",
+    "direccionL2": "Laureles, Medellín",
+    "direccionFull": "Transversal 40 · Diag. 74A #28 — Laureles, Medellín",
+    "horario": "Martes a domingo · 4:00 p.m. – 2:00 a.m.",
+    "horarioCorto": "Mar–Dom · 4:00 p.m. – 2:00 a.m."
+  },
+  "marca": {
+    "nombre": "Public House",
+    "tagline": "La cervecería de Laureles: birra, fútbol en vivo y el mejor parche de la zona.",
+    "rating": "4.4",
+    "reviewCount": "538"
+  },
+  "nav": [
+    { "href": "#inicio", "label": "Inicio" },
+    { "href": "#menu", "label": "Menú" },
+    { "href": "#futbol", "label": "Fútbol" },
+    { "href": "#ambiente", "label": "Ambiente" },
+    { "href": "#ubicacion", "label": "Ubicación" }
+  ],
+  "pilares": [
+    { "ic": "🍺", "t": "Cerveza artesanal", "s": "Nacionales e importadas" },
+    { "ic": "⚽", "t": "Fútbol en vivo", "s": "Pantallas gigantes" },
+    { "ic": "🎱", "t": "Billar & dardos", "s": "Espacios para el parche" },
+    { "ic": "🍗", "t": "Alitas & burgers", "s": "Cocina de barra" }
+  ],
+  "sobreFeatures": [
+    ["🍺", "Birra de todo el mundo"],
+    ["⚽", "Fútbol en vivo"],
+    ["🎱", "Billar & dardos"],
+    ["🎶", "Buen ambiente"]
+  ],
+  "futbolTags": [
+    "⚽ Selección Colombia",
+    "🏆 Champions League",
+    "🇪🇺 Ligas de Europa",
+    "🍺 Promos en partido"
+  ],
+  "menu": [
+    {
+      "id": "cervezas",
+      "label": "🍺 Cervezas",
+      "items": [
+        ["Artesanal de la casa", "Rubia, roja o negra — de barril", "$12.000"],
+        ["Importadas", "Paulaner, Hoegaarden, Corona, HB", "$16.000"],
+        ["Michelada del parche", "Limón, sal, salsas de la casa", "$14.000"],
+        ["Torre de cerveza 3L", "Para compartir con el parche", "$95.000"]
+      ]
+    },
+    {
+      "id": "comida",
+      "label": "🍗 Alitas & comida",
+      "items": [
+        ["Alitas (10 uds)", "BBQ, buffalo, miel-mostaza o parmesano", "$32.000"],
+        ["Burger Public", "Doble carne, tocineta, cheddar, papas", "$28.000"],
+        ["Picada del pub", "Chorizo, chicharrón, papa, arepa", "$45.000"],
+        ["Papas cargadas", "Queso, tocineta y cebollín", "$22.000"]
+      ]
+    },
+    {
+      "id": "cocteles",
+      "label": "🍹 Cócteles",
+      "items": [
+        ["Gin tonic", "Con botánicos y toque cítrico", "$24.000"],
+        ["Mojito clásico", "Menta fresca y ron", "$22.000"],
+        ["Aperol spritz", "Burbujeante y refrescante", "$26.000"],
+        ["Shots del parche", "Ronda de 4 — pídelos en la barra", "$30.000"]
+      ]
+    }
+  ],
+  "maker": { "name": "PixelWeb", "url": "https://mi-portafolio-eta-hazel.vercel.app/" }
+}

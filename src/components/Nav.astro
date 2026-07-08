@@ -1,12 +1,8 @@
 ---
-const links = [
-  { href: '#inicio', label: 'Inicio' },
-  { href: '#menu', label: 'Menú' },
-  { href: '#futbol', label: 'Fútbol' },
-  { href: '#ambiente', label: 'Ambiente' },
-  { href: '#ubicacion', label: 'Ubicación' },
-];
-const wa = 'https://wa.me/573104445220';
+import site from '../data/site.json';
+const links = site.nav;
+const wa = site.contacto.whatsappUrl;
+const { direccionFull, whatsappDisplay } = site.contacto;
 ---
 
 <!-- header fijo: transparente sobre el hero, sólido al hacer scroll -->
@@ -14,8 +10,8 @@ const wa = 'https://wa.me/573104445220';
   <!-- barra utilitaria -->
   <div class="border-b border-white/10 bg-negro2 text-[0.78rem] text-tenue">
     <div class="mx-auto flex max-w-[1240px] flex-wrap justify-center gap-x-6 gap-y-1 px-6 py-2 text-center sm:justify-between">
-      <span>📍 Transversal 40 · Diag. 74A #28 — Laureles, Medellín</span>
-      <span>Reservas: <b class="font-bold text-ambar">310 444 5220</b> · Mar–Dom</span>
+      <span>📍 {direccionFull}</span>
+      <span>Reservas: <b class="font-bold text-ambar">{whatsappDisplay}</b> · Mar–Dom</span>
     </div>
   </div>
 

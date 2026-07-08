@@ -1,5 +1,8 @@
 ---
 // Sobre el pub — imagen (pared de ladrillo/neón) + texto con badge
+import site from '../data/site.json';
+const { rating } = site.marca;
+const features = site.sobreFeatures;
 ---
 <section id="sobre" class="bg-negro py-20 md:py-28">
   <div class="mx-auto grid max-w-[1240px] items-center gap-10 px-6 md:grid-cols-2 md:gap-14">
@@ -11,7 +14,7 @@
         class="aspect-[4/5] w-full rounded-2xl object-cover shadow-2xl"
       />
       <div class="absolute -bottom-5 -right-4 rounded-xl bg-ambar px-5 py-4 text-center text-negro2 shadow-xl md:-right-6">
-        <b class="block font-display text-3xl leading-none">4.4★</b>
+        <b class="block font-display text-3xl leading-none">{rating}★</b>
         <small class="text-[0.72rem] font-bold uppercase tracking-widest">en Google</small>
       </div>
     </div>
@@ -29,12 +32,7 @@
         Ladrillo, madera y luz cálida para que te quedes hasta el último tiempo.
       </p>
       <ul class="mt-8 grid grid-cols-2 gap-4 text-sm">
-        {[
-          ['🍺', 'Birra de todo el mundo'],
-          ['⚽', 'Fútbol en vivo'],
-          ['🎱', 'Billar & dardos'],
-          ['🎶', 'Buen ambiente'],
-        ].map(([ic, t]) => (
+        {features.map(([ic, t]) => (
           <li class="flex items-center gap-3 rounded-lg border border-white/10 bg-negro2 px-4 py-3">
             <span class="text-xl">{ic}</span><span class="font-semibold text-crema/90">{t}</span>
           </li>

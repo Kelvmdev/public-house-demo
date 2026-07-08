@@ -1,13 +1,11 @@
 ---
-const wa = 'https://wa.me/573104445220';
-const ig = 'https://instagram.com/publichousemedellin';
-const links = [
-  { href: '#inicio', label: 'Inicio' },
-  { href: '#menu', label: 'Menú' },
-  { href: '#futbol', label: 'Fútbol' },
-  { href: '#ambiente', label: 'Ambiente' },
-  { href: '#ubicacion', label: 'Ubicación' },
-];
+import site from '../data/site.json';
+const wa = site.contacto.whatsappUrl;
+const ig = site.contacto.instagram;
+const links = site.nav;
+const { direccionL1, direccionL2, horarioCorto, whatsappDisplay } = site.contacto;
+const tagline = site.marca.tagline;
+const maker = site.maker;
 const year = 2026;
 ---
 <footer class="border-t border-white/10 bg-negro2 py-14">
@@ -17,7 +15,7 @@ const year = 2026;
         >Public <span class="text-ambar">House</span></span
       >
       <p class="mt-4 max-w-xs text-sm leading-relaxed text-tenue">
-        La cervecería de Laureles: birra, fútbol en vivo y el mejor parche de la zona.
+        {tagline}
       </p>
       <div class="mt-5 flex gap-3">
         <a href={ig} target="_blank" rel="noopener" class="rounded-lg border border-white/15 px-4 py-2 text-sm font-semibold text-crema/90 transition hover:border-ambar hover:text-ambar">📸 Instagram</a>
@@ -37,15 +35,15 @@ const year = 2026;
     <div>
       <h3 class="mb-4 font-display text-sm font-normal uppercase tracking-widest text-ambar">Contacto</h3>
       <address class="space-y-2 text-sm not-italic text-crema/80">
-        <p>Transversal 40 · Diag. 74A #28<br />Laureles, Medellín</p>
-        <p>Tel: <a href={wa} class="hover:text-ambar">310 444 5220</a></p>
-        <p>Mar–Dom · 4:00 p.m. – 2:00 a.m.</p>
+        <p>{direccionL1}<br />{direccionL2}</p>
+        <p>Tel: <a href={wa} class="hover:text-ambar">{whatsappDisplay}</a></p>
+        <p>{horarioCorto}</p>
       </address>
     </div>
   </div>
 
   <div class="mx-auto mt-10 flex max-w-[1240px] flex-col items-center justify-between gap-2 border-t border-white/10 px-6 pt-6 text-xs text-tenue sm:flex-row">
     <p>© {year} Public House · Laureles, Medellín</p>
-    <p>Hecho con <span aria-hidden="true">🍺</span> por <a href="https://mi-portafolio-eta-hazel.vercel.app/" target="_blank" rel="noopener" class="text-crema/70 hover:text-ambar">PixelWeb</a></p>
+    <p>Hecho con <span aria-hidden="true">🍺</span> por <a href={maker.url} target="_blank" rel="noopener" class="text-crema/70 hover:text-ambar">{maker.name}</a></p>
   </div>
 </footer>

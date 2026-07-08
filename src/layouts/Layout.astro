@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import siteData from '../data/site.json';
 
 const {
   title = 'Public House — Cervecería en Laureles, Medellín',
@@ -46,19 +47,19 @@ const ogImage = `${site}/og.jpg`;
       description,
       url: site,
       image: ogImage,
-      telephone: '+573104445220',
+      telephone: `+${siteData.contacto.whatsapp}`,
       priceRange: '$$',
       servesCuisine: ['Cerveza artesanal', 'Alitas', 'Hamburguesas', 'Cócteles'],
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Transversal 40 · Diag. 74A #28',
+        streetAddress: siteData.contacto.direccionL1,
         addressLocality: 'Medellín',
         addressRegion: 'Antioquia',
         addressCountry: 'CO',
       },
       openingHours: 'Tu-Su 16:00-02:00',
-      aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.4', reviewCount: '538' },
-      sameAs: ['https://instagram.com/publichousemedellin'],
+      aggregateRating: { '@type': 'AggregateRating', ratingValue: siteData.marca.rating, reviewCount: siteData.marca.reviewCount },
+      sameAs: [siteData.contacto.instagram],
     })} />
 
     <!-- Fuentes: Anton (titulares) · Rokkitt 900 (logo) · Mulish (cuerpo) -->

@@ -1,37 +1,7 @@
 ---
-// Menú con pestañas. Datos de demo (plausibles) — el cliente los ajusta luego.
-const tabs = [
-  {
-    id: 'cervezas',
-    label: '🍺 Cervezas',
-    items: [
-      ['Artesanal de la casa', 'Rubia, roja o negra — de barril', '$12.000'],
-      ['Importadas', 'Paulaner, Hoegaarden, Corona, HB', '$16.000'],
-      ['Michelada del parche', 'Limón, sal, salsas de la casa', '$14.000'],
-      ['Torre de cerveza 3L', 'Para compartir con el parche', '$95.000'],
-    ],
-  },
-  {
-    id: 'comida',
-    label: '🍗 Alitas & comida',
-    items: [
-      ['Alitas (10 uds)', 'BBQ, buffalo, miel-mostaza o parmesano', '$32.000'],
-      ['Burger Public', 'Doble carne, tocineta, cheddar, papas', '$28.000'],
-      ['Picada del pub', 'Chorizo, chicharrón, papa, arepa', '$45.000'],
-      ['Papas cargadas', 'Queso, tocineta y cebollín', '$22.000'],
-    ],
-  },
-  {
-    id: 'cocteles',
-    label: '🍹 Cócteles',
-    items: [
-      ['Gin tonic', 'Con botánicos y toque cítrico', '$24.000'],
-      ['Mojito clásico', 'Menta fresca y ron', '$22.000'],
-      ['Aperol spritz', 'Burbujeante y refrescante', '$26.000'],
-      ['Shots del parche', 'Ronda de 4 — pídelos en la barra', '$30.000'],
-    ],
-  },
-];
+// Menú con pestañas. Contenido editable en src/data/site.json (precios, items).
+import site from '../data/site.json';
+const tabs = site.menu;
 ---
 <section id="menu" class="bg-negro2 py-20 md:py-28">
   <div class="mx-auto max-w-[1100px] px-6">

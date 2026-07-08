@@ -1,5 +1,8 @@
 ---
-const wa = 'https://wa.me/573104445220';
+import site from '../data/site.json';
+const wa = site.contacto.whatsappUrl;
+const pilares = site.pilares;
+const { rating } = site.marca;
 ---
 
 <header id="inicio" class="relative flex min-h-[100svh] items-center overflow-hidden isolate">
@@ -32,7 +35,7 @@ const wa = 'https://wa.me/573104445220';
       </div>
 
       <p class="rise d5 mt-6 text-[0.85rem] tracking-[.02em] text-tenue">
-        <span class="text-amarillo" aria-hidden="true">★</span> <b class="text-crema">4.4</b> en Google · Cervecería desde el barrio
+        <span class="text-amarillo" aria-hidden="true">★</span> <b class="text-crema">{rating}</b> en Google · Cervecería desde el barrio
       </p>
     </div>
   </div>
@@ -41,12 +44,7 @@ const wa = 'https://wa.me/573104445220';
 <!-- franja de pilares -->
 <div class="relative z-[5] border-t border-white/10 bg-gradient-to-t from-[rgba(12,10,9,.92)] to-[rgba(12,10,9,.6)]">
   <div class="mx-auto grid max-w-[1240px] grid-cols-2 gap-x-4 gap-y-1 px-6 py-5 md:grid-cols-4">
-    {[
-      { ic: '🍺', t: 'Cerveza artesanal', s: 'Nacionales e importadas' },
-      { ic: '⚽', t: 'Fútbol en vivo', s: 'Pantallas gigantes' },
-      { ic: '🎱', t: 'Billar & dardos', s: 'Espacios para el parche' },
-      { ic: '🍗', t: 'Alitas & burgers', s: 'Cocina de barra' },
-    ].map((p, i) => (
+    {pilares.map((p, i) => (
       <div class:list={['flex items-center gap-3.5 px-1 py-2.5', i % 2 === 1 && 'border-l border-white/10 pl-5', i === 2 && 'md:border-l border-white/10 md:pl-5']}>
         <span class="text-[1.7rem] leading-none" aria-hidden="true">{p.ic}</span>
         <div>
