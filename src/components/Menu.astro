@@ -54,7 +54,7 @@ const tabs = [
             aria-controls={`panel-${t.id}`}
             aria-selected={i === 0 ? 'true' : 'false'}
             data-tab={t.id}
-            class="menu-tab rounded-full border border-white/15 px-5 py-2.5 text-sm font-bold transition aria-selected:border-ambar aria-selected:bg-ambar aria-selected:text-negro2"
+            class="menu-tab rounded-full border border-white/15 px-5 py-2.5 text-sm font-bold transition active:scale-95 aria-selected:border-ambar aria-selected:bg-ambar aria-selected:text-negro2"
           >{t.label}</button>
         ))}
       </div>
