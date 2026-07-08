@@ -66,7 +66,13 @@ section[id], header[id] { scroll-margin-top: 6rem; }
 .reveal.is-visible { opacity: 1; transform: none; }
 
 @media (prefers-reduced-motion: reduce) {
-  .rise, .reveal { animation: none; opacity: 1; transform: none; transition: none; }
-  .hero-bg { animation: none; }
-  html { scroll-behavior: auto; }
+  /* neutraliza toda animación/transición, incl. utilidades como animate-pulse */
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* estado final visible garantizado de las entradas */
+  .rise, .reveal { opacity: 1; transform: none; }
 }

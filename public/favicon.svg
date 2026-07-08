@@ -1,8 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
   <rect width="128" height="128" rx="26" fill="#141110"/>
-  <text x="50%" y="52%" dominant-baseline="central" text-anchor="middle"
-        font-family="Georgia, 'Times New Roman', serif" font-weight="900" font-size="70"
-        letter-spacing="-4">
-    <tspan fill="#F4EEE2">P</tspan><tspan fill="#E0A340">H</tspan>
-  </text>
+  <!-- P (crema) — trazado con rects, sin depender de fuentes -->
+  <g fill="#F4EEE2">
+    <rect x="28" y="34" width="11" height="60"/>
+    <rect x="28" y="34" width="26" height="11"/>
+    <rect x="28" y="52" width="26" height="11"/>
+    <rect x="43" y="34" width="11" height="29"/>
+  </g>
+  <!-- H (ámbar) -->
+  <g fill="#E0A340">
+    <rect x="70" y="34" width="11" height="60"/>
+    <rect x="89" y="34" width="11" height="60"/>
+    <rect x="70" y="58" width="30" height="11"/>
+  </g>
 </svg>

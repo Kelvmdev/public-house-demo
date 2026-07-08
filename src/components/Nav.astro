@@ -91,11 +91,20 @@ const { direccionFull, whatsappDisplay } = site.contacto;
     b.setAttribute('aria-expanded', String(open));
     b.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
   });
-  m?.querySelectorAll('a').forEach((a) =>
-    a.addEventListener('click', () => {
-      m.classList.add('hidden');
-      b?.setAttribute('aria-expanded', 'false');
-      b?.setAttribute('aria-label', 'Abrir menú');
-    }),
-  );
+  const cerrar = (devolverFoco = false) => {
+    m?.classList.add('hidden');
+    b?.setAttribute('aria-expanded', 'false');
+    b?.setAttribute('aria-label', 'Abrir menú');
+    if (devolverFoco) b?.focus();
+  };
+  m?.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => cerrar()));
+  // Esc cierra y devuelve el foco al botón; clic fuera solo cierra
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !m?.classList.contains('hidden')) cerrar(true);
+  });
+  document.addEventListener('click', (e) => {
+    if (m?.classList.contains('hidden')) return;
+    const t = e.target as Node;
+    if (!m.contains(t) && !b?.contains(t)) cerrar();
+  });
 </script>

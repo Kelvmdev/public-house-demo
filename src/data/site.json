@@ -8,7 +8,8 @@
     "direccionL2": "Laureles, Medellín",
     "direccionFull": "Transversal 40 · Diag. 74A #28 — Laureles, Medellín",
     "horario": "Martes a domingo · 4:00 p.m. – 2:00 a.m.",
-    "horarioCorto": "Mar–Dom · 4:00 p.m. – 2:00 a.m."
+    "horarioCorto": "Mar–Dom · 4:00 p.m. – 2:00 a.m.",
+    "openingHoursSchema": "Tu-Su 16:00-02:00"
   },
   "marca": {
     "nombre": "Public House",

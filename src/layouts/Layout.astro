@@ -60,7 +60,7 @@ const ogImage = `${site}/og.jpg`;
         addressRegion: 'Antioquia',
         addressCountry: 'CO',
       },
-      openingHours: 'Tu-Su 16:00-02:00',
+      openingHours: siteData.contacto.openingHoursSchema,
       aggregateRating: { '@type': 'AggregateRating', ratingValue: siteData.marca.rating, reviewCount: siteData.marca.reviewCount },
       sameAs: [siteData.contacto.instagram],
     })} />}
