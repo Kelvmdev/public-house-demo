@@ -5,6 +5,7 @@ import siteData from '../data/site.json';
 const {
   title = 'Public House — Cervecería en Laureles, Medellín',
   description = 'El pub de Laureles: cerveza artesanal e importada, fútbol en vivo, billar, dardos y las mejores alitas de la zona. Buen parche todos los días.',
+  jsonLd = true, // solo la home; el 404 lo apaga con jsonLd={false}
 } = Astro.props;
 
 const site = 'https://public-house-demo.vercel.app';
@@ -40,7 +41,7 @@ const ogImage = `${site}/og.jpg`;
     <meta name="twitter:image" content={ogImage} />
 
     <!-- JSON-LD: negocio local (SEO / GEO) -->
-    <script type="application/ld+json" set:html={JSON.stringify({
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'BarOrPub',
       name: 'Public House',
@@ -60,7 +61,7 @@ const ogImage = `${site}/og.jpg`;
       openingHours: 'Tu-Su 16:00-02:00',
       aggregateRating: { '@type': 'AggregateRating', ratingValue: siteData.marca.rating, reviewCount: siteData.marca.reviewCount },
       sameAs: [siteData.contacto.instagram],
-    })} />
+    })} />}
 
     <!-- Fuentes: Anton (titulares) · Rokkitt 900 (logo) · Mulish (cuerpo) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
