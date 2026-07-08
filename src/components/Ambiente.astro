@@ -15,17 +15,45 @@ const a = site.ambiente;
 
     <div class="reveal mt-10 grid grid-cols-2 gap-3 md:grid-cols-4">
       {fotos.map((f) => (
-        <img
-          src={f.src}
-          alt={f.alt}
-          loading="lazy"
+        <button
+          type="button"
           class:list={[
-            'w-full rounded-xl object-cover transition duration-500 hover:brightness-110',
+            'lightbox-btn group relative overflow-hidden rounded-xl',
             // tiles con proporción (escalan 320→4K, sin alturas fijas); el tile grande llena su celda 2×2 en md
             f.span ? ['aspect-[4/3] md:aspect-auto md:h-full', f.span] : 'aspect-[4/3]',
           ]}
-        />
+          data-src={f.src}
+          aria-label={`Ampliar foto: ${f.alt}`}
+        >
+          <img
+            src={f.src}
+            alt={f.alt}
+            loading="lazy"
+            class="h-full w-full object-cover transition duration-500 group-hover:brightness-110"
+          />
+        </button>
       ))}
     </div>
   </div>
+
+  <!-- lightbox: dialog nativo (Esc y clic-fuera cierran) -->
+  <dialog id="lightbox" class="m-auto max-h-[90vh] max-w-[92vw] bg-transparent backdrop:bg-black/80 backdrop:backdrop-blur-sm">
+    <img id="lightbox-img" src="" alt="" class="max-h-[90vh] max-w-[92vw] rounded-lg object-contain" />
+  </dialog>
 </section>
+
+<script>
+  const dlg = document.getElementById('lightbox') as HTMLDialogElement | null;
+  const img = document.getElementById('lightbox-img') as HTMLImageElement | null;
+  document.querySelectorAll<HTMLButtonElement>('.lightbox-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const inner = btn.querySelector('img');
+      if (!dlg || !img || !inner) return;
+      img.src = btn.dataset.src ?? inner.src;
+      img.alt = inner.alt;
+      dlg.showModal();
+    });
+  });
+  // clic en el backdrop (fuera de la imagen) cierra
+  dlg?.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+</script>

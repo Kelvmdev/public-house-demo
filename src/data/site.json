@@ -120,5 +120,17 @@
       ]
     }
   ],
+  "faqHead": {
+    "eyebrow": "Preguntas frecuentes",
+    "h2": "Lo que todos <span class=\"text-ambar\">preguntan</span>"
+  },
+  "faq": [
+    { "q": "¿A qué hora abre Public House?", "a": "Abrimos de martes a domingo, de 4:00 p.m. a 2:00 a.m. Los lunes descansamos." },
+    { "q": "¿Dónde queda Public House?", "a": "Estamos en Transversal 40 #74A-29, barrio Laureles, Medellín, a pocas cuadras del Estadio." },
+    { "q": "¿Puedo reservar mesa?", "a": "Sí. Reserva por WhatsApp al 304 434 1758, sobre todo los días de partido o si vienes con grupo grande." },
+    { "q": "¿Transmiten los partidos de fútbol?", "a": "Sí. Pasamos la Selección Colombia, la Champions y las ligas de Europa en pantallas gigantes con el sonido a todo volumen." },
+    { "q": "¿Cuánto cuestan las alitas y la cerveza?", "a": "Las alitas (10 unidades) están en $32.000 y la cerveza artesanal de la casa desde $12.000. La torre de 3 litros para compartir cuesta $95.000." },
+    { "q": "¿Tienen billar y dardos?", "a": "Sí, tenemos mesas de billar y dardos para armar el parche mientras esperas el partido." }
+  ],
   "maker": { "name": "PixelWeb", "url": "https://mi-portafolio-eta-hazel.vercel.app/" }
 }
